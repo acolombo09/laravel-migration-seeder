@@ -1,0 +1,26 @@
+nome repo: laravel-migration-seeder
+
+Creiamo una tabella trains e relativa Migration
+
+Ogni treno dovrà avere:
+- Azienda
+- Stazione di partenza -> stazione_di_partenza
+- Stazione di arrivo
+- Orario di partenza
+- Orario di arrivo
+- Codice Treno
+- Numero Carrozze
+- In orario
+- Cancellato
+
+È probabile che siano necessarie altre colonne per 
+far funzionare la tabella nel modo corretto  ...
+
+1. Create Model relativo.
+2. Aggiungiamo un seeder per la tabella trains usando 
+FakerPHP e la popoliamo tramite il model relativo.
+3. Creare Controller per mostrare nella home page 
+tutti i treni che sono in partenza dalla data odierna.
+
+BONUS:
+Implementare il seeder tramite un file csv.
