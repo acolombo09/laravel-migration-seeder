@@ -9,8 +9,10 @@ class TrainController extends Controller {
   
   public function home(){
 
-    $trains = Train::all();
-
-    return view('home', compact('trains'));
+    //array di tutti gli elementi della tabella "Train"
+    $data = [
+      "trains" => Train::all()		
+  ];
+  return view("home", $data);
 }
 }

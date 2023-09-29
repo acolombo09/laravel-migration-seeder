@@ -23,20 +23,32 @@
             </div>
           </div>
           @endforeach --}}
-        <table class="table">
+        <table class="table mt-3">
 
           <thead>
   
             <tr>
+              <th scope="col">#</th>
 
-                <th scope="col">#</th>
+              <th scope="col">Company name</th>
 
-          
-                    
-                <th scope="col">
-                </th>
+              <th scope="col">Departure Station</th>
 
-        
+              <th scope="col">Date</th>
+
+              <th scope="col">Arrival Station</th>
+
+              <th scope="col">Departure Time</th>
+
+              <th scope="col">Arrival Time</th>
+
+              <th scope="col">Train Code</th>
+
+              <th scope="col">Cart Number</th>
+              
+              <th scope="col">In time</th>
+
+              <th scope="col">Canceled</th>
             </tr>
   
           </thead>
@@ -46,46 +58,58 @@
             @foreach ($trains as $train)
             <tr>
 
-                <th scope="row">
-                    {{$train->id}}
-                </th>                    
+              <th scope="row">
+                {{$train->id}}
+              </th>                    
+            
+              <td class="whitespace-nowrap">
+                {{$train->company}}
+              </td>
               
-                <td>
-                  {{$train->company}}
-                </td>
-                
-                <td>
-                  {{$train->departure_station}}
-                </td>
-                
-                <td>
-                  {{$train->arrival_station}}
-                </td>
-                
-                <td>
-                  {{$train->departure_time}}
-                </td>
-                
-                <td>
-                  {{$train->arrival_time}}
-                </td>
-                
-                <td>
-                  {{$train->train_code}}
-                </td>
-                
-                <td>
-                  {{$train->cart_number}}
-                </td>
-                
-                <td>
-                  {{$train->in_time}}
-                </td>
-                
-                <td>
-                  {{$train->canceled}}
-                </td>
-                
+              <td class="whitespace-nowrap">
+                {{$train->departure_station}}
+              </td>
+              
+              <td class="whitespace-nowrap">
+                {{$train->data}}
+              </td>
+
+              <td class="whitespace-nowrap">
+                {{$train->arrival_station}}
+              </td>
+              
+              <td class="whitespace-nowrap">
+                {{$train->departure_time}}
+              </td>
+              
+              <td class="whitespace-nowrap">
+                {{$train->arrival_time}}
+              </td>
+              
+              <td class="whitespace-nowrap">
+                {{$train->train_code}}
+              </td>
+              
+              <td class="whitespace-nowrap">
+                {{$train->cart_number}}
+              </td>
+              
+              <td class="whitespace-nowrap">
+                @if ($train->in_time)
+                  Yes
+                @else
+                  No
+                @endif
+              </td>
+              
+              <td class="whitespace-nowrap">
+                @if ($train->canceled)
+                  Yes
+                @else
+                  No
+                @endif
+              </td>
+              
             </tr>
             @endforeach                                               
           </tbody>
